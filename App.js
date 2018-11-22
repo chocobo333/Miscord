@@ -2,7 +2,10 @@ const conf = require('config')
 // ログイン処理
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const token = conf.token
+// local
+//const token = conf.token
+// heroku
+const token = os.environ.get('ENV_VAR_DISCORD_ID')
 
 client.on('ready', () => {
     console.log('ready...')
@@ -49,6 +52,6 @@ client.on('message', message => {
     }
 
 })
-
+z
 
 client.login(token)
