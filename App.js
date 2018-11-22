@@ -5,7 +5,7 @@ const client = new Discord.Client()
 // local
 //const token = conf.token
 // heroku
-const token = os.environ.get('ENV_VAR_DISCORD_ID')
+const token = process.env.ENV_VAR_DISCORD_ID
 
 client.on('ready', () => {
     console.log('ready...')
