@@ -3,6 +3,7 @@ const conf = require('config')
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const token = conf.token
+
 client.on('ready', () => {
     console.log('ready...')
 })
@@ -48,7 +49,6 @@ client.on('message', message => {
     }
 
 })
-
 
 
 client.login(token)
