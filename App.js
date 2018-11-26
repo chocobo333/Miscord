@@ -27,6 +27,10 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
+    // コマンド以外の禁止ワード設定等も別ファイルで切り出したい
+    if(message.content.match(/discord.gg/)) {
+        message.delete(100)
+    }
     // Bot自身の発言を無視する
     if(!message.content.startsWith(prefix) || message.author.bot) return
     
