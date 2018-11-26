@@ -79,40 +79,7 @@ client.on('message', message => {
         console.error(error)
         message.reply('there was an error trying to execute that command!')
     }
-
-
-    // 特定の言葉に反応して返答する処理(完全一致)
-    if (message.content === '寒いね') {
-        let channel = message.channel
-        let author = message.author.username
-        let reply_text = '寒いね'
-        message.reply(reply_text)
-            .then(message => console.log(`Sent message: ${reply_text}`))
-            .catch(console.error)
-        return
-    }
-
-    // 特定の言葉に反応して返答する処理(部分一致)
-    if(message.content.match(/おはよ/)) {
-        let channel = message.channel
-        let author = message.author.username
-        let reply_text = '寒いね'
-        message.reply(reply_text)
-            .then(message => console.log(`Sent message: ${reply_text}`))
-            .catch(console.error)
-        return
-    }
-
-    // メンションなしでメッセージを送信する
-    if(message.content === 'おはよ'){
-        message.channel.send('おはようございます')
-    }
-
-    // 指定した語句を含む場合投稿を削除する
-    if(message.content.match(/discord.gg/)) {
-        message.delete(100)
-    }
-
+    
 })
 
 client.login(token)
