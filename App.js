@@ -4,7 +4,7 @@ const conf = require('config')
 const Discord = require('discord.js')
 const client = new Discord.Client()
 client.commands = new Discord.Collection()
-const colldowns = new Discord.Collection()
+const cooldowns = new Discord.Collection()
 // local
 // const token = conf.token
 // const prefix = conf.prefix
@@ -79,7 +79,7 @@ client.on('message', message => {
         console.error(error)
         message.reply('there was an error trying to execute that command!')
     }
-    
+
 })
 
 client.login(token)
