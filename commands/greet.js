@@ -6,7 +6,7 @@ module.exports = {
         if(message.content.match(/おはよ/)) {
         let author = message.author.username
         let reply_text = `${author}寒いね`
-        message.channel.reply(reply_text)
+        message.reply(reply_text)
             .then(message => console.log(`Sent message: ${reply_text}`))
             .catch(console.error)
         return
