@@ -34,7 +34,9 @@ client.on('message', message => {
     controller.execute(message, args)
 
     // 会話コマンドチェック
-    greet.execute(message, args)
+    if(message.content.startsWith(chatPrefix)){
+        greet.execute(message, args)
+    }
 
     // コマンド以外の場合はreturn
     if(!message.content.startsWith(prefix)) return
