@@ -7,9 +7,12 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 client.commands = new Discord.Collection()
 const cooldowns = new Discord.Collection()
+
 // local
 // const token = conf.token
 // const prefix = conf.prefix
+// const chatPrefix = conf.chatPrefix
+
 // heroku
 const token = process.env.ENV_VAR_DISCORD_ID
 const prefix = process.env.ENV_VAR_DISCORD_PREFIX
