@@ -1,18 +1,18 @@
 const fs = require('fs')
 const conf = require('config')
-const controller = require('./controller')
-const greet = require('./greet')
+const controller = require('./controller.js')
+const greet = require('./greet.js')
 // ログイン処理
 const Discord = require('discord.js')
 const client = new Discord.Client()
 client.commands = new Discord.Collection()
 const cooldowns = new Discord.Collection()
 // local
-// const token = conf.token
-// const prefix = conf.prefix
+ const token = conf.token
+ const prefix = conf.prefix
 // heroku
-const token = process.env.ENV_VAR_DISCORD_ID
-const prefix = process.env.ENV_VAR_DISCORD_PREFIX
+// const token = process.env.ENV_VAR_DISCORD_ID
+// const prefix = process.env.ENV_VAR_DISCORD_PREFIX
 
 // commands下のjsファイルのファイル名を配列で取得する。
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
