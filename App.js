@@ -31,11 +31,11 @@ client.on('message', message => {
     if(message.author.bot) return
 
     // 禁止ワードチェック
-    controller.execute(message, args)
+    controller.execute(message)
 
     // 会話コマンドチェック
     if(message.content.startsWith(chatPrefix)){
-        greet.execute(message, args)
+        greet.execute(message)
     }
 
     // コマンド以外の場合はreturn

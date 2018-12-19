@@ -1,5 +1,5 @@
 module.exports = {
-    execute(message, args) {
+    execute(message) {
         // 特定の言葉に反応して返答する処理(部分一致)
         if(message.content.match(/おはよ/)) {
             let channel = message.channel
