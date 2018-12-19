@@ -13,6 +13,7 @@ const cooldowns = new Discord.Collection()
 // heroku
 const token = process.env.ENV_VAR_DISCORD_ID
 const prefix = process.env.ENV_VAR_DISCORD_PREFIX
+const chatPrefix = process.env.ENV_VAR_DISCORD_CHATPREFIX
 
 // commands下のjsファイルのファイル名を配列で取得する。
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
