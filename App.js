@@ -1,5 +1,7 @@
 const fs = require('fs')
 const conf = require('config')
+const controller = require('./controller')
+const greet = require('./greet')
 // ログイン処理
 const Discord = require('discord.js')
 const client = new Discord.Client()
@@ -20,19 +22,22 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command)
 }
 
-
 client.on('ready', () => {
     console.log('ready...')
 })
 
 client.on('message', message => {
+    //bot地震の発言を無視する
+    if(message.author.bot) return
 
-    // コマンド以外の禁止ワード設定等も別ファイルで切り出したい
-    if(message.content.match(/discord.gg/)) {
-        message.delete(100)
-    }
-    // Bot自身の発言を無視する
-    if(!message.content.startsWith(prefix) || message.author.bot) return
+    // 禁止ワードチェック
+    controller.execute(message)
+
+    // 会話コマンドチェック
+    greet.execute(message)
+
+    // コマンド以外の場合はreturn
+    if(!message.content.startsWith(prefix)) return
     
     const args = message.content.slice(prefix.length).split(/ +/)
     const commandName = args.shift().toLowerCase()
