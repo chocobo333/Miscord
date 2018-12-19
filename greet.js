@@ -17,6 +17,7 @@ module.exports = {
             message.reply(reply_text)
                 .then(message => console.log(`Sent message: ${reply_text}`))
                 .catch(console.error)
+        return
         }
     }
 }
