@@ -31,10 +31,10 @@ client.on('message', message => {
     if(message.author.bot) return
 
     // 禁止ワードチェック
-    controller.execute(message)
+    controller.execute(message, args)
 
     // 会話コマンドチェック
-    greet.execute(message)
+    greet.execute(message, args)
 
     // コマンド以外の場合はreturn
     if(!message.content.startsWith(prefix)) return
