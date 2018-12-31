@@ -37,6 +37,8 @@ client.on('message', message => {
     // 禁止ワードチェック
     controller.execute(message)
 
+    //メッセージのメンションが自分かを確かめてる？↓
+    //Message.mentionsってメンバ使った方がスマートそう、動けばいいか
     // 会話コマンドチェック
     if(message.content.startsWith(chatPrefix)){
         greet.execute(message)
