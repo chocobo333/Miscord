@@ -6,7 +6,7 @@ module.exports = {
         const url_only_channel_id = 0 // このままだと動かないよ〜〜^^
         const url_pattern = /(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/
 
-        if(message.channel.id === url_only_channel_id)
+        if(message.channel.id == url_only_channel_id)
         {//<-僕はこのインデント(?)が好き
             if(!message.content.match(url_pattern))
             {
